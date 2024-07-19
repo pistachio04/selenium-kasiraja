@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-18T03:29:19.245Z",
+    "end": "2024-07-18T03:29:26.437Z",
+    "duration": 7192,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "932d0614-4c86-42db-95dd-d09a61c4fcd6",
+      "title": "",
+      "fullFile": "/Users/msigid10/Documents/qa-automation/selenium-automation/src/tests/pengguna.test.js",
+      "file": "/src/tests/pengguna.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f2ae1491-5549-43d1-93b0-c0f481aed6c8",
+          "title": "CRUD Pengguna Test",
+          "fullFile": "/Users/msigid10/Documents/qa-automation/selenium-automation/src/tests/pengguna.test.js",
+          "file": "/src/tests/pengguna.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"CRUD Pengguna Test\"",
+              "fullTitle": "CRUD Pengguna Test \"before all\" hook in \"CRUD Pengguna Test\"",
+              "timedOut": false,
+              "duration": 3749,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('chrome').build()\nloginPage = new LoginPage(driver)\ndashboardPage = new DashboardPage(driver)\npenggunaPage = new PenggunaPage(driver)",
+              "err": {},
+              "uuid": "236036a2-e28c-420f-8dbb-e19517b8c8de",
+              "parentUUID": "f2ae1491-5549-43d1-93b0-c0f481aed6c8",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login and add a new pengguna",
+              "fullTitle": "CRUD Pengguna Test should login and add a new pengguna",
+              "timedOut": false,
+              "duration": 3435,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login ke sistem\nawait loginPage.open()\nawait loginPage.login('sigid@evermos.com', 'admin#123')\n// Tunggu hingga halaman dashboard dimuat\nawait driver.wait(until.elementLocated(By.xpath('//h3[normalize-space()=\"kasirAja\"]')), 5000)\n// Navigasi ke halaman Pengguna\nawait dashboardPage.navigateToPengguna()\n// Tunggu hingga halaman Pengguna dimuat\nawait driver.wait(until.elementLocated(By.xpath('//a[normalize-space()=\"tambah\"]')), 5000);\n// Navigasi ke halaman Tambah Pengguna\nawait penggunaPage.navigateToTambahPengguna()\n\n// Tunggu hingga halaman Tambah Pengguna dimuat\nawait driver.wait(until.elementLocated(By.css('button[class=\"chakra-button css-l5lnz6\"]')), 5000);\n// Tambahkan Pengguna Baru\n// await jobCategoriesPage.addJobCategory('New Job Category');\nawait penggunaPage.tambahPengguna('Pengguna Create', 'pengguna@gmail.com', 'admin123123')\n// Tunggu hingga elemen berhasil ditambahkan\nawait driver.wait(until.elementLocated(By.xpath('//td[normalize-space()=\"Pengguna Create\"]')), 5000);\nconsole.log('Done!');",
+              "err": {},
+              "uuid": "184a67e7-ad1d-4c9d-917a-bd1910cb06a4",
+              "parentUUID": "f2ae1491-5549-43d1-93b0-c0f481aed6c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "184a67e7-ad1d-4c9d-917a-bd1910cb06a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3435,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.6.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
